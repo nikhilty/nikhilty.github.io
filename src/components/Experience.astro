@@ -1,0 +1,250 @@
+---
+const experiences = [
+  {
+    role: "L6 Senior Software Engineer",
+    company: "Affirm",
+    team: "Online Storage Team",
+    period: "Dec 2025 — Present",
+    description: "Lead design and evolution of high-scale online storage infrastructure supporting critical financial transaction workloads.",
+    highlights: [
+      "Architect and optimize low-latency, highly available storage systems powering real-time decisioning and consumer-facing services",
+      "Drive data durability, replication, and fault-tolerance strategies across multi-region deployments",
+      "Partner with infrastructure, risk, and product engineering teams to align storage scalability with business growth",
+      "Mentor senior engineers and influence long-term technical strategy for storage reliability and performance",
+    ],
+    tech: ["PostgreSQL", "Aurora", "AWS", "Kubernetes", "Python", "Go"],
+  },
+  {
+    role: "Software Engineer",
+    company: "Amazon Web Services (AWS)",
+    team: "Aurora Engines",
+    period: "Mar 2025 — Dec 2025",
+    description: "Designed and optimized Aurora's core storage engine internals, improving performance and reliability for PostgreSQL customers worldwide.",
+    highlights: [
+      "Designed and optimized Aurora's write path and checkpointing to reduce latency and improve throughput across distributed storage layers",
+      "Contributed to global failover and disaster recovery systems enhancing data durability and export reliability",
+      "Delivered distributed logging and fine-grained observability into the data plane for improved root cause analysis",
+      "Partnered with platform and SRE teams to deliver availability improvements for Aurora PostgreSQL customers",
+    ],
+    tech: ["Aurora", "PostgreSQL Internals", "Distributed Systems", "AWS", "C++"],
+  },
+  {
+    role: "Senior Software Engineer II / Tech Lead",
+    company: "Akamai Technologies",
+    team: "",
+    period: "Sept 2015 — Mar 2025",
+    description: "Led engineering efforts across security and access management systems, building scalable MFA and SSH infrastructure for enterprise customers.",
+    highlights: [
+      "Architected secure, scalable MFA and SSH access systems using Rust, Java, PostgreSQL, and Azure",
+      "Built resilient, high-throughput CLI tooling and backends for FIDO2-based credential export and validation",
+      "Integrated anomaly detection and monitoring systems improving MTTR and fault detection",
+      "Mentored engineers and led technical deep dives and cross-team architecture reviews",
+    ],
+    tech: ["Rust", "Java", "PostgreSQL", "Azure", "FIDO2", "Docker"],
+  },
+];
+---
+
+<section id="experience" class="experience">
+  <div class="container">
+    <div class="animate-in">
+      <span class="section-label">Experience</span>
+      <h2 class="section-title">Where I've worked</h2>
+      <p class="section-subtitle">A decade of building systems at the intersection of storage, infrastructure, and scale.</p>
+    </div>
+    <div class="timeline">
+      {experiences.map((exp, i) => (
+        <div class="timeline-item animate-in" style={`transition-delay: ${i * 0.15}s`}>
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            {i < experiences.length - 1 && <div class="marker-line"></div>}
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">{exp.role}</h3>
+                <p class="timeline-company">
+                  {exp.company}
+                  {exp.team && <span class="timeline-team"> &middot; {exp.team}</span>}
+                </p>
+              </div>
+              <span class="timeline-period">{exp.period}</span>
+            </div>
+            <p class="timeline-description">{exp.description}</p>
+            <ul class="timeline-highlights">
+              {exp.highlights.map((h) => (
+                <li>{h}</li>
+              ))}
+            </ul>
+            <div class="timeline-tech">
+              {exp.tech.map((t) => (
+                <span class="tech-tag">{t}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience {
+    background: var(--bg-primary);
+  }
+
+  .timeline {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .timeline-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    padding-top: 0.5rem;
+  }
+
+  .marker-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg-primary);
+    box-shadow: 0 0 0 2px var(--accent);
+    flex-shrink: 0;
+  }
+
+  .marker-line {
+    width: 2px;
+    flex: 1;
+    background: var(--border);
+    margin: 0.5rem 0;
+  }
+
+  .timeline-card {
+    flex: 1;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all var(--transition);
+  }
+
+  .timeline-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 1rem;
+  }
+
+  .timeline-role {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .timeline-company {
+    font-size: 0.95rem;
+    color: var(--accent-light);
+    font-weight: 500;
+    margin-top: 0.2rem;
+  }
+
+  .timeline-team {
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+
+  .timeline-period {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    padding: 0.25rem 0.75rem;
+    background: var(--bg-secondary);
+    border-radius: 100px;
+    border: 1px solid var(--border);
+  }
+
+  .timeline-description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .timeline-highlights {
+    list-style: none;
+    margin-bottom: 1.25rem;
+  }
+
+  .timeline-highlights li {
+    position: relative;
+    padding-left: 1.25rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .timeline-highlights li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .timeline-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tech-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+    background: var(--accent-glow);
+    color: var(--accent-light);
+    border-radius: 6px;
+    border: 1px solid rgba(99, 102, 241, 0.15);
+  }
+
+  @media (max-width: 768px) {
+    .timeline-marker {
+      display: none;
+    }
+
+    .timeline-header {
+      flex-direction: column;
+    }
+
+    .timeline-period {
+      width: fit-content;
+    }
+
+    .timeline-card {
+      padding: 1.5rem;
+    }
+  }
+</style>

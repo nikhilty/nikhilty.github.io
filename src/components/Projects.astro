@@ -1,0 +1,178 @@
+---
+const projects = [
+  {
+    title: "Aurora Write Path Optimization",
+    description: "Designed and optimized Aurora's write path and checkpointing mechanisms to reduce latency and improve throughput across distributed storage layers at AWS.",
+    tags: ["Aurora", "PostgreSQL", "Distributed Systems", "C++"],
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+    color: "#f59e0b",
+  },
+  {
+    title: "Online Storage Platform",
+    description: "Architecting low-latency, highly available storage systems at Affirm that power real-time financial decisioning and consumer-facing services with multi-region fault tolerance.",
+    tags: ["PostgreSQL", "AWS", "Kubernetes", "Python"],
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
+    color: "#6366f1",
+  },
+  {
+    title: "Global Failover & DR",
+    description: "Contributed to Aurora's global failover and disaster recovery systems, enhancing data durability, export reliability, and cross-region consistency at scale.",
+    tags: ["Aurora", "Disaster Recovery", "Replication", "AWS"],
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+    color: "#22c55e",
+  },
+  {
+    title: "Enterprise MFA & SSH Platform",
+    description: "Architected secure, scalable multi-factor authentication and SSH access systems at Akamai using Rust, Java, PostgreSQL, and Azure — serving enterprise-grade security infrastructure.",
+    tags: ["Rust", "Java", "FIDO2", "Azure", "PostgreSQL"],
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    color: "#ec4899",
+  },
+  {
+    title: "Distributed Observability",
+    description: "Delivered distributed logging and fine-grained observability into Aurora's data plane, enabling faster root cause analysis and reducing incident detection time.",
+    tags: ["Prometheus", "Grafana", "Distributed Logging", "AWS"],
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+    color: "#8b5cf6",
+  },
+  {
+    title: "FIDO2 Credential Tooling",
+    description: "Built resilient, high-throughput CLI tooling and backends for FIDO2-based credential export and validation, integrated with anomaly detection for improved fault detection.",
+    tags: ["Rust", "CLI", "FIDO2", "Monitoring"],
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+    color: "#06b6d4",
+  },
+];
+---
+
+<section id="projects" class="projects">
+  <div class="container">
+    <div class="animate-in">
+      <span class="section-label">Projects</span>
+      <h2 class="section-title">Things I've built</h2>
+      <p class="section-subtitle">Key projects spanning storage engines, cloud infrastructure, security platforms, and observability systems.</p>
+    </div>
+    <div class="projects-grid">
+      {projects.map((project, i) => (
+        <div class="project-card animate-in" style={`transition-delay: ${i * 0.1}s`}>
+          <div class="project-card-inner">
+            <div class="project-icon" style={`--project-color: ${project.color}`}>
+              <Fragment set:html={project.icon} />
+            </div>
+            <h3 class="project-title">{project.title}</h3>
+            <p class="project-description">{project.description}</p>
+            <div class="project-tags">
+              {project.tags.map((tag) => (
+                <span class="project-tag">{tag}</span>
+              ))}
+            </div>
+          </div>
+          <div class="project-glow" style={`--project-color: ${project.color}`}></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects {
+    background: var(--bg-secondary);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .project-card {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all var(--transition);
+  }
+
+  .project-card:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .project-card-inner {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+  }
+
+  .project-glow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: var(--project-color);
+    filter: blur(100px);
+    opacity: 0;
+    transition: opacity var(--transition);
+  }
+
+  .project-card:hover .project-glow {
+    opacity: 0.08;
+  }
+
+  .project-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: color-mix(in srgb, var(--project-color) 12%, transparent);
+    border-radius: 12px;
+    color: var(--project-color);
+    margin-bottom: 1.25rem;
+  }
+
+  .project-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-description {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .project-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    border-radius: 5px;
+    border: 1px solid var(--border);
+  }
+
+  @media (max-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
