@@ -537,7 +537,7 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   .fp {
-    max-width: 600px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 1rem 6rem;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -615,7 +615,9 @@ import Layout from '../layouts/Layout.astro';
     display: none;
   }
   .fp-panel.active {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 
   /* Cards */
@@ -623,7 +625,6 @@ import Layout from '../layouts/Layout.astro';
     background: #16161f;
     border: 1px solid #1e1e2e;
     border-radius: 14px;
-    margin-bottom: 0.75rem;
     overflow: hidden;
   }
   .fp-card--open {
@@ -899,6 +900,72 @@ import Layout from '../layouts/Layout.astro';
   }
   .fp-target-note strong {
     color: #818cf8;
+  }
+
+  /* Desktop: two-column card grid, bigger type */
+  @media (min-width: 768px) {
+    .fp {
+      padding: 0 2rem 4rem;
+    }
+    .fp-header {
+      padding: 2rem 0 1.25rem;
+    }
+    .fp-title {
+      font-size: 1.8rem;
+    }
+    .fp-stats {
+      font-size: 0.9rem;
+    }
+    .fp-tabs {
+      top: 72px;
+      padding: 1rem 0;
+    }
+    .fp-tab {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.95rem;
+    }
+    .fp-panel.active {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .fp-card-head {
+      padding: 1rem 1.25rem;
+      font-size: 1.1rem;
+    }
+    .fp-card-body {
+      padding: 0 1.25rem 1.25rem;
+    }
+    .fp-card-body h4 {
+      font-size: 0.8rem;
+    }
+    .fp-chip {
+      font-size: 0.85rem;
+      padding: 0.35rem 0.8rem;
+    }
+    .fp-options li {
+      font-size: 0.9rem;
+    }
+    .fp-ex-name {
+      font-size: 1rem;
+    }
+    .fp-ex-sets {
+      font-size: 0.9rem;
+    }
+    .fp-ex-target {
+      font-size: 0.82rem;
+    }
+    .fp-note {
+      font-size: 0.88rem;
+    }
+    .fp-steps-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .fp-step-val {
+      font-size: 1.15rem;
+    }
+    .fp-checklist li {
+      font-size: 0.9rem;
+    }
   }
 
   @media (max-width: 400px) {
