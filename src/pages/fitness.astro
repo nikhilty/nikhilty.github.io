@@ -1,0 +1,923 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Nikhil — Fat Loss Plan" description="Complete fat loss meal and workout plan">
+<div class="fp">
+  <header class="fp-header">
+    <a href="/" class="fp-back" aria-label="Back to portfolio">&larr;</a>
+    <div>
+      <h1 class="fp-title">Fat Loss Plan</h1>
+      <p class="fp-stats">6'3" &middot; 130kg &rarr; 120kg &middot; 4 days/week</p>
+    </div>
+  </header>
+
+  <nav class="fp-tabs" id="tabs">
+    <button class="fp-tab active" data-tab="meals">Meals</button>
+    <button class="fp-tab" data-tab="workouts">Workouts</button>
+    <button class="fp-tab" data-tab="extras">Steps & More</button>
+  </nav>
+
+  <!-- ==================== MEALS TAB ==================== -->
+  <div class="fp-panel active" id="panel-meals">
+
+    <!-- Pre-Workout -->
+    <details class="fp-card">
+      <summary class="fp-card-head">
+        <span class="fp-icon">&#9728;</span>
+        <span>Pre-Workout <small>(optional)</small></span>
+      </summary>
+      <div class="fp-card-body">
+        <p class="fp-note">If training within 30 min of waking. Fasted is fine if energy is good.</p>
+        <ul class="fp-options">
+          <li><strong>A</strong> 1 banana + black coffee</li>
+          <li><strong>B</strong> 2 dates + black coffee</li>
+          <li><strong>C</strong> Water + coffee</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Breakfast -->
+    <details class="fp-card" open>
+      <summary class="fp-card-head">
+        <span class="fp-icon">&#127859;</span>
+        <span>Breakfast</span>
+      </summary>
+      <div class="fp-card-body">
+        <div class="fp-macro-row">
+          <span class="fp-chip">2 whole eggs</span>
+          <span class="fp-chip">4 egg whites</span>
+          <span class="fp-chip">300ml milk (3.25%)</span>
+          <span class="fp-chip">1 fruit</span>
+          <span class="fp-chip">1 serving seeds</span>
+        </div>
+        <h4>Combos</h4>
+        <ul class="fp-options">
+          <li>Omelette + apple + milk</li>
+          <li>Boiled eggs + banana + milk</li>
+          <li>Scrambled eggs w/ spinach + orange + milk</li>
+        </ul>
+        <h4>Seed pick (choose 1 tbsp)</h4>
+        <div class="fp-macro-row">
+          <span class="fp-chip fp-chip--green">Pumpkin</span>
+          <span class="fp-chip fp-chip--green">Chia</span>
+          <span class="fp-chip">Flax</span>
+        </div>
+      </div>
+    </details>
+
+    <!-- Lunch -->
+    <details class="fp-card" open>
+      <summary class="fp-card-head">
+        <span class="fp-icon">&#127858;</span>
+        <span>Lunch</span>
+      </summary>
+      <div class="fp-card-body">
+        <div class="fp-macro-row">
+          <span class="fp-chip">150g paneer</span>
+          <span class="fp-chip">150g Greek yogurt</span>
+          <span class="fp-chip">75g rice <em>or</em> 3 rotis</span>
+          <span class="fp-chip">5g oil</span>
+        </div>
+        <h4>Paneer Rice Bowl</h4>
+        <ol class="fp-steps">
+          <li>Cook rice</li>
+          <li>Cook paneer with 5g oil + spices</li>
+          <li>Serve with yogurt on the side</li>
+        </ol>
+      </div>
+    </details>
+
+    <!-- Dinner -->
+    <details class="fp-card" open>
+      <summary class="fp-card-head">
+        <span class="fp-icon">&#127769;</span>
+        <span>Dinner</span>
+      </summary>
+      <div class="fp-card-body">
+        <div class="fp-macro-row">
+          <span class="fp-chip">40g soya chunks</span>
+          <span class="fp-chip">40g rajma/chickpeas/lentils</span>
+          <span class="fp-chip">150g veggies</span>
+          <span class="fp-chip">75g rice</span>
+          <span class="fp-chip">10g oil</span>
+        </div>
+        <h4>Soya-Dal Bowl</h4>
+        <ol class="fp-steps">
+          <li>Cook rice + boil soya</li>
+          <li>Cook dal</li>
+          <li>Stir-fry veggies</li>
+          <li>Mix and serve</li>
+        </ol>
+      </div>
+    </details>
+
+    <!-- Vegetables -->
+    <details class="fp-card">
+      <summary class="fp-card-head">
+        <span class="fp-icon">&#129382;</span>
+        <span>Vegetables</span>
+      </summary>
+      <div class="fp-card-body">
+        <h4>Excellent</h4>
+        <div class="fp-macro-row">
+          <span class="fp-chip fp-chip--green">Brussels sprouts</span>
+          <span class="fp-chip fp-chip--green">Broccoli</span>
+          <span class="fp-chip fp-chip--green">Cauliflower</span>
+          <span class="fp-chip fp-chip--green">Spinach</span>
+          <span class="fp-chip fp-chip--green">Green beans</span>
+          <span class="fp-chip fp-chip--green">Cabbage</span>
+          <span class="fp-chip fp-chip--green">Zucchini</span>
+          <span class="fp-chip fp-chip--green">Asparagus</span>
+        </div>
+        <h4>Good</h4>
+        <div class="fp-macro-row">
+          <span class="fp-chip">Carrots</span>
+          <span class="fp-chip">Capsicum</span>
+          <span class="fp-chip">Mushrooms</span>
+          <span class="fp-chip">Peas</span>
+        </div>
+        <h4>Salad (unlimited)</h4>
+        <div class="fp-macro-row">
+          <span class="fp-chip">Cucumber</span>
+          <span class="fp-chip">Tomatoes</span>
+          <span class="fp-chip">Lettuce</span>
+        </div>
+      </div>
+    </details>
+
+    <!-- Fruits -->
+    <details class="fp-card">
+      <summary class="fp-card-head">
+        <span class="fp-icon">&#127822;</span>
+        <span>Fruits <small>(1 daily)</small></span>
+      </summary>
+      <div class="fp-card-body">
+        <h4>Best</h4>
+        <div class="fp-macro-row">
+          <span class="fp-chip fp-chip--green">Apple</span>
+          <span class="fp-chip fp-chip--green">Orange</span>
+          <span class="fp-chip fp-chip--green">Guava</span>
+          <span class="fp-chip fp-chip--green">Pear</span>
+          <span class="fp-chip fp-chip--green">Kiwi</span>
+        </div>
+        <h4>Fine</h4>
+        <div class="fp-macro-row">
+          <span class="fp-chip">Banana</span>
+          <span class="fp-chip">Mango</span>
+          <span class="fp-chip">Grapes</span>
+          <span class="fp-chip">Pineapple</span>
+          <span class="fp-chip">Pomegranate</span>
+        </div>
+      </div>
+    </details>
+
+    <!-- Drinks -->
+    <details class="fp-card">
+      <summary class="fp-card-head">
+        <span class="fp-icon">&#129380;</span>
+        <span>Drinks</span>
+      </summary>
+      <div class="fp-card-body">
+        <h4>Best</h4>
+        <div class="fp-macro-row">
+          <span class="fp-chip fp-chip--green">Water</span>
+          <span class="fp-chip fp-chip--green">Sparkling water</span>
+          <span class="fp-chip fp-chip--green">Black coffee</span>
+          <span class="fp-chip fp-chip--green">Green tea</span>
+        </div>
+        <h4>Allowed (max 1/day)</h4>
+        <div class="fp-macro-row">
+          <span class="fp-chip">Coke Zero</span>
+          <span class="fp-chip">Diet Coke</span>
+        </div>
+      </div>
+    </details>
+
+    <!-- Snacks -->
+    <details class="fp-card">
+      <summary class="fp-card-head">
+        <span class="fp-icon">&#127839;</span>
+        <span>Snacks</span>
+      </summary>
+      <div class="fp-card-body">
+        <h4>Tier 1</h4>
+        <div class="fp-macro-row">
+          <span class="fp-chip fp-chip--green">Boiled eggs</span>
+          <span class="fp-chip fp-chip--green">Greek yogurt</span>
+          <span class="fp-chip fp-chip--green">Roasted chana</span>
+        </div>
+        <h4>Tier 2</h4>
+        <div class="fp-macro-row">
+          <span class="fp-chip">Paneer tikka</span>
+          <span class="fp-chip">Sprouts chaat</span>
+        </div>
+        <h4>Tier 3</h4>
+        <div class="fp-macro-row">
+          <span class="fp-chip">Protein restaurant food</span>
+        </div>
+        <h4 class="fp-avoid-label">Avoid</h4>
+        <div class="fp-macro-row">
+          <span class="fp-chip fp-chip--red">Samosas</span>
+          <span class="fp-chip fp-chip--red">Fries</span>
+          <span class="fp-chip fp-chip--red">Pizza</span>
+          <span class="fp-chip fp-chip--red">Chips</span>
+          <span class="fp-chip fp-chip--red">Cookies</span>
+          <span class="fp-chip fp-chip--red">Donuts</span>
+        </div>
+      </div>
+    </details>
+
+  </div>
+
+  <!-- ==================== WORKOUTS TAB ==================== -->
+  <div class="fp-panel" id="panel-workouts">
+
+    <!-- Weekly Schedule -->
+    <div class="fp-card fp-card--open">
+      <div class="fp-card-head fp-card-head--static">
+        <span class="fp-icon">&#128197;</span>
+        <span>Weekly Schedule</span>
+      </div>
+      <div class="fp-card-body">
+        <div class="fp-schedule">
+          <div class="fp-day"><span class="fp-day-name">Mon</span><span class="fp-day-workout">Upper A</span></div>
+          <div class="fp-day"><span class="fp-day-name">Tue</span><span class="fp-day-workout">Lower A</span></div>
+          <div class="fp-day fp-day--rest"><span class="fp-day-name">Wed</span><span class="fp-day-workout">Walk + Mobility</span></div>
+          <div class="fp-day"><span class="fp-day-name">Thu</span><span class="fp-day-workout">Upper B</span></div>
+          <div class="fp-day"><span class="fp-day-name">Fri</span><span class="fp-day-workout">Lower B</span></div>
+          <div class="fp-day fp-day--rest"><span class="fp-day-name">Sat</span><span class="fp-day-workout">Light walk</span></div>
+          <div class="fp-day fp-day--rest"><span class="fp-day-name">Sun</span><span class="fp-day-workout">Rest</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Warm-Up -->
+    <details class="fp-card">
+      <summary class="fp-card-head">
+        <span class="fp-icon">&#128293;</span>
+        <span>Warm-Up <small>(before every session)</small></span>
+      </summary>
+      <div class="fp-card-body">
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Bike</div>
+          <div class="fp-ex-detail">5&ndash;10 min</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Arm Circles</div>
+          <div class="fp-ex-detail">10 forward + 10 backward</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Band Pull-Aparts</div>
+          <div class="fp-ex-detail">15 reps</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Bodyweight Box Squat</div>
+          <div class="fp-ex-detail">10 reps (pain-free only)</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Upper Body A -->
+    <details class="fp-card">
+      <summary class="fp-card-head">
+        <span class="fp-icon">&#128170;</span>
+        <span>Upper Body A <small>Monday</small></span>
+      </summary>
+      <div class="fp-card-body">
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Bench Press</div>
+          <div class="fp-ex-sets">3 &times; 6&ndash;8</div>
+          <div class="fp-ex-target">Chest / Triceps / Front shoulders</div>
+          <div class="fp-ex-rest">Rest 2&ndash;3 min</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Assisted Pull-Up</div>
+          <div class="fp-ex-sets">2 &times; 8&ndash;12</div>
+          <div class="fp-ex-target">Lats / Upper back</div>
+          <div class="fp-ex-rest">Rest 90s</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Incline Dumbbell Press</div>
+          <div class="fp-ex-sets">2 &times; 8&ndash;12</div>
+          <div class="fp-ex-target">Upper chest</div>
+          <div class="fp-ex-rest">Rest 90s</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Lat Pulldown</div>
+          <div class="fp-ex-sets">2 &times; 8&ndash;12</div>
+          <div class="fp-ex-target">Lats</div>
+          <div class="fp-ex-rest">Rest 90s</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Dumbbell Lateral Raise</div>
+          <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
+          <div class="fp-ex-target">Side shoulders</div>
+          <div class="fp-ex-rest">Rest 60s</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Cable Crunch</div>
+          <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
+          <div class="fp-ex-target">Abs</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Leg Raises</div>
+          <div class="fp-ex-sets">2 sets to failure</div>
+          <div class="fp-ex-target">Abs</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Lower Body A -->
+    <details class="fp-card">
+      <summary class="fp-card-head">
+        <span class="fp-icon">&#129461;</span>
+        <span>Lower Body A <small>Tuesday</small></span>
+      </summary>
+      <div class="fp-card-body">
+        <p class="fp-note">Knee-friendly. Don't go excessively deep on leg press.</p>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Leg Press</div>
+          <div class="fp-ex-sets">3 &times; 10&ndash;12</div>
+          <div class="fp-ex-target">Quads / Glutes</div>
+          <div class="fp-ex-rest">Rest 2 min</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Leg Extension</div>
+          <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
+          <div class="fp-ex-target">Quads (light weight)</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Hamstring Curl</div>
+          <div class="fp-ex-sets">3 &times; 12&ndash;15</div>
+          <div class="fp-ex-target">Hamstrings</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Standing Calf Raise</div>
+          <div class="fp-ex-sets">3 &times; 15&ndash;20</div>
+          <div class="fp-ex-target">Calves</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Plank</div>
+          <div class="fp-ex-sets">3 &times; 30s</div>
+          <div class="fp-ex-target">Core</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Upper Body B -->
+    <details class="fp-card">
+      <summary class="fp-card-head">
+        <span class="fp-icon">&#128170;</span>
+        <span>Upper Body B <small>Thursday</small></span>
+      </summary>
+      <div class="fp-card-body">
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Overhead Press</div>
+          <div class="fp-ex-sets">3 &times; 6&ndash;8</div>
+          <div class="fp-ex-target">Shoulders / Triceps</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">T-Bar Row</div>
+          <div class="fp-ex-sets">2 &times; 6&ndash;8</div>
+          <div class="fp-ex-target">Upper back</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Knee Push-Ups</div>
+          <div class="fp-ex-sets">2 sets AMRAP</div>
+          <div class="fp-ex-target">Chest / Triceps</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Seated Row</div>
+          <div class="fp-ex-sets">2 &times; 8&ndash;12</div>
+          <div class="fp-ex-target">Mid-back</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Pec Fly</div>
+          <div class="fp-ex-sets">2 &times; 8&ndash;12</div>
+          <div class="fp-ex-target">Chest</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Rear Delt Fly</div>
+          <div class="fp-ex-sets">2 &times; 15&ndash;20</div>
+          <div class="fp-ex-target">Rear shoulders</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Dumbbell Shrugs</div>
+          <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
+          <div class="fp-ex-target">Traps</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Lower Body B -->
+    <details class="fp-card">
+      <summary class="fp-card-head">
+        <span class="fp-icon">&#129461;</span>
+        <span>Lower Body B <small>Friday</small></span>
+      </summary>
+      <div class="fp-card-body">
+        <p class="fp-note">Knee-friendly session.</p>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Glute Bridge</div>
+          <div class="fp-ex-sets">3 &times; 8&ndash;12</div>
+          <div class="fp-ex-target">Glutes</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Leg Press</div>
+          <div class="fp-ex-sets">3 &times; 10&ndash;15</div>
+          <div class="fp-ex-target">Legs</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Hamstring Curl</div>
+          <div class="fp-ex-sets">2 &times; 10&ndash;12</div>
+          <div class="fp-ex-target">Hamstrings</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Seated Calf Raise</div>
+          <div class="fp-ex-sets">3 &times; 15&ndash;20</div>
+          <div class="fp-ex-target">Calves</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Hammer Curl</div>
+          <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
+          <div class="fp-ex-target">Biceps</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Overhead Tricep Extension</div>
+          <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
+          <div class="fp-ex-target">Triceps</div>
+        </div>
+        <div class="fp-exercise">
+          <div class="fp-ex-name">Side Plank</div>
+          <div class="fp-ex-sets">2 each side &times; 20&ndash;30s</div>
+          <div class="fp-ex-target">Core</div>
+        </div>
+      </div>
+    </details>
+
+  </div>
+
+  <!-- ==================== EXTRAS TAB ==================== -->
+  <div class="fp-panel" id="panel-extras">
+
+    <!-- Steps -->
+    <div class="fp-card fp-card--open">
+      <div class="fp-card-head fp-card-head--static">
+        <span class="fp-icon">&#128694;</span>
+        <span>Daily Steps</span>
+      </div>
+      <div class="fp-card-body">
+        <p class="fp-note">Don't chase 10k immediately &mdash; protect your knee.</p>
+        <div class="fp-steps-grid">
+          <div class="fp-step-week">
+            <span class="fp-step-label">Week 1</span>
+            <span class="fp-step-val">5,000&ndash;6,000</span>
+          </div>
+          <div class="fp-step-week">
+            <span class="fp-step-label">Week 2</span>
+            <span class="fp-step-val">6,000</span>
+          </div>
+          <div class="fp-step-week">
+            <span class="fp-step-label">Week 3</span>
+            <span class="fp-step-val">7,000</span>
+          </div>
+          <div class="fp-step-week fp-step-week--target">
+            <span class="fp-step-label">Week 4+</span>
+            <span class="fp-step-val">8,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress Tracking -->
+    <div class="fp-card fp-card--open">
+      <div class="fp-card-head fp-card-head--static">
+        <span class="fp-icon">&#128200;</span>
+        <span>Progress Tracking</span>
+      </div>
+      <div class="fp-card-body">
+        <h4>Every Morning (after washroom)</h4>
+        <ul class="fp-checklist">
+          <li>Weight</li>
+          <li>Knee pain (0&ndash;10)</li>
+        </ul>
+        <h4>Every Sunday</h4>
+        <ul class="fp-checklist">
+          <li>Waist at navel</li>
+          <li>Waist below navel</li>
+          <li>Weekly average weight</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Success Markers -->
+    <div class="fp-card fp-card--open">
+      <div class="fp-card-head fp-card-head--static">
+        <span class="fp-icon">&#127942;</span>
+        <span>Success Markers</span>
+      </div>
+      <div class="fp-card-body">
+        <ul class="fp-checklist fp-checklist--success">
+          <li>Weight trending down</li>
+          <li>Waist shrinking</li>
+          <li>Strength increasing</li>
+          <li>Knee pain stable or improving</li>
+        </ul>
+        <p class="fp-target-note">
+          12-week target: <strong>118&ndash;122 kg</strong>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</Layout>
+
+<style>
+  .fp {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem 6rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Header */
+  .fp-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 0 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #0a0a0f;
+  }
+  .fp-back {
+    font-size: 1.5rem;
+    color: #818cf8;
+    text-decoration: none;
+    line-height: 1;
+    padding: 0.25rem;
+  }
+  .fp-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #f0f0f5;
+    line-height: 1.2;
+  }
+  .fp-stats {
+    font-size: 0.8rem;
+    color: #9595a8;
+    margin-top: 0.15rem;
+  }
+
+  /* Tabs */
+  .fp-tabs {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+    position: sticky;
+    top: 58px;
+    z-index: 99;
+    background: #0a0a0f;
+    border-bottom: 1px solid #1e1e2e;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .fp-tabs::-webkit-scrollbar { display: none; }
+  .fp-tab {
+    flex-shrink: 0;
+    padding: 0.5rem 1.1rem;
+    border: 1px solid #2a2a3d;
+    border-radius: 100px;
+    background: transparent;
+    color: #9595a8;
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .fp-tab.active {
+    background: #6366f1;
+    border-color: #6366f1;
+    color: #fff;
+  }
+
+  /* Panels */
+  .fp-panel {
+    display: none;
+  }
+  .fp-panel.active {
+    display: block;
+  }
+
+  /* Cards */
+  .fp-card {
+    background: #16161f;
+    border: 1px solid #1e1e2e;
+    border-radius: 14px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+  .fp-card--open {
+    /* always-open cards */
+  }
+  .fp-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f0f0f5;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+  .fp-card-head::-webkit-details-marker { display: none; }
+  .fp-card-head::after {
+    content: '+';
+    margin-left: auto;
+    font-size: 1.2rem;
+    color: #5c5c70;
+    font-weight: 300;
+    transition: transform 0.2s;
+  }
+  details[open] > .fp-card-head::after {
+    content: '\2212';
+  }
+  .fp-card-head--static {
+    cursor: default;
+  }
+  .fp-card-head--static::after {
+    display: none;
+  }
+  .fp-card-head small {
+    font-weight: 400;
+    color: #5c5c70;
+    font-size: 0.78rem;
+    margin-left: 0.25rem;
+  }
+  .fp-icon {
+    font-size: 1.15rem;
+    line-height: 1;
+  }
+  .fp-card-body {
+    padding: 0 1rem 1rem;
+  }
+  .fp-card-body h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #818cf8;
+    margin: 0.85rem 0 0.4rem;
+  }
+  .fp-avoid-label {
+    color: #f87171 !important;
+  }
+  .fp-note {
+    font-size: 0.82rem;
+    color: #9595a8;
+    padding: 0.5rem 0.7rem;
+    background: rgba(99, 102, 241, 0.08);
+    border-radius: 8px;
+    margin-bottom: 0.65rem;
+    line-height: 1.5;
+  }
+
+  /* Chips / Tags */
+  .fp-macro-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.25rem;
+  }
+  .fp-chip {
+    padding: 0.3rem 0.7rem;
+    background: #1c1c28;
+    border: 1px solid #2a2a3d;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: #d0d0dd;
+    white-space: nowrap;
+  }
+  .fp-chip em {
+    color: #5c5c70;
+    font-style: normal;
+  }
+  .fp-chip--green {
+    background: rgba(34, 197, 94, 0.1);
+    border-color: rgba(34, 197, 94, 0.25);
+    color: #86efac;
+  }
+  .fp-chip--red {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.2);
+    color: #fca5a5;
+    text-decoration: line-through;
+    text-decoration-color: rgba(252, 165, 165, 0.4);
+  }
+
+  /* Options / Steps lists */
+  .fp-options {
+    list-style: none;
+    padding: 0;
+  }
+  .fp-options li {
+    padding: 0.35rem 0;
+    font-size: 0.85rem;
+    color: #d0d0dd;
+    border-bottom: 1px solid #1e1e2e;
+  }
+  .fp-options li:last-child { border: none; }
+  .fp-options li strong {
+    display: inline-block;
+    width: 1.4rem;
+    color: #818cf8;
+    font-weight: 600;
+  }
+  .fp-steps {
+    padding-left: 1.3rem;
+    margin: 0;
+  }
+  .fp-steps li {
+    font-size: 0.85rem;
+    color: #d0d0dd;
+    padding: 0.2rem 0;
+  }
+  .fp-steps li::marker {
+    color: #5c5c70;
+  }
+
+  /* Workout exercises */
+  .fp-exercise {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #1e1e2e;
+  }
+  .fp-exercise:last-child { border: none; }
+  .fp-ex-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #f0f0f5;
+  }
+  .fp-ex-sets {
+    font-size: 0.85rem;
+    color: #818cf8;
+    font-weight: 500;
+    margin-top: 0.1rem;
+  }
+  .fp-ex-target {
+    font-size: 0.78rem;
+    color: #5c5c70;
+    margin-top: 0.1rem;
+  }
+  .fp-ex-rest {
+    font-size: 0.75rem;
+    color: #9595a8;
+    margin-top: 0.1rem;
+  }
+
+  /* Schedule grid */
+  .fp-schedule {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.35rem;
+  }
+  .fp-day {
+    text-align: center;
+    padding: 0.5rem 0.2rem;
+    border-radius: 10px;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+  }
+  .fp-day--rest {
+    background: rgba(100, 100, 120, 0.08);
+    border-color: #1e1e2e;
+  }
+  .fp-day-name {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #818cf8;
+    margin-bottom: 0.2rem;
+  }
+  .fp-day--rest .fp-day-name {
+    color: #5c5c70;
+  }
+  .fp-day-workout {
+    display: block;
+    font-size: 0.6rem;
+    color: #d0d0dd;
+    line-height: 1.25;
+  }
+  .fp-day--rest .fp-day-workout {
+    color: #5c5c70;
+  }
+
+  /* Steps grid */
+  .fp-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  .fp-step-week {
+    padding: 0.65rem 0.8rem;
+    background: #1c1c28;
+    border: 1px solid #2a2a3d;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .fp-step-week--target {
+    background: rgba(99, 102, 241, 0.12);
+    border-color: rgba(99, 102, 241, 0.3);
+  }
+  .fp-step-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #5c5c70;
+    margin-bottom: 0.15rem;
+  }
+  .fp-step-val {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #f0f0f5;
+  }
+  .fp-step-week--target .fp-step-val {
+    color: #818cf8;
+  }
+
+  /* Checklist */
+  .fp-checklist {
+    list-style: none;
+    padding: 0;
+  }
+  .fp-checklist li {
+    padding: 0.4rem 0 0.4rem 1.6rem;
+    font-size: 0.85rem;
+    color: #d0d0dd;
+    position: relative;
+    border-bottom: 1px solid #1e1e2e;
+  }
+  .fp-checklist li:last-child { border: none; }
+  .fp-checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #2a2a3d;
+    border-radius: 4px;
+  }
+  .fp-checklist--success li::before {
+    border-color: rgba(34, 197, 94, 0.4);
+    background: rgba(34, 197, 94, 0.08);
+  }
+
+  .fp-target-note {
+    margin-top: 1rem;
+    padding: 0.7rem 0.9rem;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #d0d0dd;
+    text-align: center;
+  }
+  .fp-target-note strong {
+    color: #818cf8;
+  }
+
+  @media (max-width: 400px) {
+    .fp-schedule {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>
+
+<script>
+  document.getElementById('tabs')!.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('.fp-tab');
+    if (!btn) return;
+    const tab = btn.getAttribute('data-tab')!;
+
+    document.querySelectorAll('.fp-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+
+    document.querySelectorAll('.fp-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById(`panel-${tab}`)!.classList.add('active');
+  });
+</script>
