@@ -15,11 +15,13 @@ import Layout from '../layouts/Layout.astro';
   <nav class="fp-tabs" id="tabs">
     <button class="fp-tab active" data-tab="meals">Meals</button>
     <button class="fp-tab" data-tab="workouts">Workouts</button>
+    <button class="fp-tab" data-tab="track">Track</button>
     <button class="fp-tab" data-tab="extras">Steps & More</button>
   </nav>
 
   <!-- ==================== MEALS TAB ==================== -->
   <div class="fp-panel active" id="panel-meals">
+    <div class="fp-grid">
 
     <!-- Pre-Workout -->
     <details class="fp-card">
@@ -80,7 +82,7 @@ import Layout from '../layouts/Layout.astro';
           <span class="fp-chip">5g oil</span>
         </div>
         <h4>Paneer Rice Bowl</h4>
-        <ol class="fp-steps">
+        <ol class="fp-steps-list">
           <li>Cook rice</li>
           <li>Cook paneer with 5g oil + spices</li>
           <li>Serve with yogurt on the side</li>
@@ -103,7 +105,7 @@ import Layout from '../layouts/Layout.astro';
           <span class="fp-chip">10g oil</span>
         </div>
         <h4>Soya-Dal Bowl</h4>
-        <ol class="fp-steps">
+        <ol class="fp-steps-list">
           <li>Cook rice + boil soya</li>
           <li>Cook dal</li>
           <li>Stir-fry veggies</li>
@@ -228,13 +230,15 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </details>
 
+    </div>
   </div>
 
   <!-- ==================== WORKOUTS TAB ==================== -->
   <div class="fp-panel" id="panel-workouts">
+    <div class="fp-grid">
 
     <!-- Weekly Schedule -->
-    <div class="fp-card fp-card--open">
+    <div class="fp-card fp-card--open fp-card--full">
       <div class="fp-card-head fp-card-head--static">
         <span class="fp-icon">&#128197;</span>
         <span>Weekly Schedule</span>
@@ -253,27 +257,50 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <!-- Warm-Up -->
-    <details class="fp-card">
+    <details class="fp-card fp-card--full">
       <summary class="fp-card-head">
         <span class="fp-icon">&#128293;</span>
         <span>Warm-Up <small>(before every session)</small></span>
       </summary>
       <div class="fp-card-body">
         <div class="fp-exercise">
-          <div class="fp-ex-name">Bike</div>
-          <div class="fp-ex-detail">5&ndash;10 min</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Stationary Bike</div>
+              <div class="fp-ex-sets">5&ndash;10 min</div>
+            </div>
+          </div>
+          <div class="fp-ex-detail">Easy pace to raise heart rate and warm joints.</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Arm Circles</div>
-          <div class="fp-ex-detail">10 forward + 10 backward</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Arm Circles</div>
+              <div class="fp-ex-sets">10 forward + 10 backward</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=arm+circles+warm+up+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Big circles, full range. Loosens shoulder capsule.</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Band Pull-Aparts</div>
-          <div class="fp-ex-detail">15 reps</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Band Pull-Aparts</div>
+              <div class="fp-ex-sets">15 reps</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=band+pull+aparts+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Hold band at shoulder width, pull apart to chest. Activates rear delts and rotator cuff.</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Bodyweight Box Squat</div>
-          <div class="fp-ex-detail">10 reps (pain-free only)</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Bodyweight Box Squat</div>
+              <div class="fp-ex-sets">10 reps</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=bodyweight+box+squat+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Squat to a bench/box. Pain-free range only &mdash; skip if knee hurts.</div>
         </div>
       </div>
     </details>
@@ -286,44 +313,86 @@ import Layout from '../layouts/Layout.astro';
       </summary>
       <div class="fp-card-body">
         <div class="fp-exercise">
-          <div class="fp-ex-name">Bench Press</div>
-          <div class="fp-ex-sets">3 &times; 6&ndash;8</div>
-          <div class="fp-ex-target">Chest / Triceps / Front shoulders</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Bench Press</div>
+              <div class="fp-ex-sets">3 &times; 6&ndash;8</div>
+              <div class="fp-ex-target">Chest &middot; Triceps &middot; Front shoulders</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=barbell+bench+press+proper+form+tutorial" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Feet flat, arch back slightly, grip just outside shoulders. Lower bar to mid-chest, press explosively. Don't bounce off chest.</div>
           <div class="fp-ex-rest">Rest 2&ndash;3 min</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Assisted Pull-Up</div>
-          <div class="fp-ex-sets">2 &times; 8&ndash;12</div>
-          <div class="fp-ex-target">Lats / Upper back</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Assisted Pull-Up</div>
+              <div class="fp-ex-sets">2 &times; 8&ndash;12</div>
+              <div class="fp-ex-target">Lats &middot; Upper back</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=assisted+pull+up+machine+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Pull elbows down and back, chest up. Squeeze shoulder blades at the top. Control the negative &mdash; 2&ndash;3 sec down.</div>
           <div class="fp-ex-rest">Rest 90s</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Incline Dumbbell Press</div>
-          <div class="fp-ex-sets">2 &times; 8&ndash;12</div>
-          <div class="fp-ex-target">Upper chest</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Incline Dumbbell Press</div>
+              <div class="fp-ex-sets">2 &times; 8&ndash;12</div>
+              <div class="fp-ex-target">Upper chest</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=incline+dumbbell+press+form+tutorial" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Bench at 30&ndash;45&deg;. Dumbbells at chest level, press up and slightly inward. Keep shoulders pinned back.</div>
           <div class="fp-ex-rest">Rest 90s</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Lat Pulldown</div>
-          <div class="fp-ex-sets">2 &times; 8&ndash;12</div>
-          <div class="fp-ex-target">Lats</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Lat Pulldown</div>
+              <div class="fp-ex-sets">2 &times; 8&ndash;12</div>
+              <div class="fp-ex-target">Lats</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=lat+pulldown+proper+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Lean back slightly, pull bar to upper chest. Drive elbows down, don't swing. Squeeze lats at the bottom.</div>
           <div class="fp-ex-rest">Rest 90s</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Dumbbell Lateral Raise</div>
-          <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
-          <div class="fp-ex-target">Side shoulders</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Dumbbell Lateral Raise</div>
+              <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
+              <div class="fp-ex-target">Side shoulders</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=dumbbell+lateral+raise+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Slight bend in elbows, raise to shoulder height. Lead with elbows, not hands. Light weight, feel the burn.</div>
           <div class="fp-ex-rest">Rest 60s</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Cable Crunch</div>
-          <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
-          <div class="fp-ex-target">Abs</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Cable Crunch</div>
+              <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
+              <div class="fp-ex-target">Abs</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=cable+crunch+abs+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Kneel facing cable, hold rope behind head. Crunch ribs toward hips &mdash; don't just bow. Hold bottom for 1 sec.</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Leg Raises</div>
-          <div class="fp-ex-sets">2 sets to failure</div>
-          <div class="fp-ex-target">Abs</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Hanging Leg Raises</div>
+              <div class="fp-ex-sets">2 sets to failure</div>
+              <div class="fp-ex-target">Lower abs</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=hanging+leg+raise+form+beginner" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Hang from bar, raise knees to chest (or straight legs if able). Control the swing &mdash; no kipping. Good form over reps.</div>
         </div>
       </div>
     </details>
@@ -335,32 +404,62 @@ import Layout from '../layouts/Layout.astro';
         <span>Lower Body A <small>Tuesday</small></span>
       </summary>
       <div class="fp-card-body">
-        <p class="fp-note">Knee-friendly. Don't go excessively deep on leg press.</p>
+        <p class="fp-note">Knee-friendly. Don't go excessively deep on leg press &mdash; stop at 90&deg;.</p>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Leg Press</div>
-          <div class="fp-ex-sets">3 &times; 10&ndash;12</div>
-          <div class="fp-ex-target">Quads / Glutes</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Leg Press</div>
+              <div class="fp-ex-sets">3 &times; 10&ndash;12</div>
+              <div class="fp-ex-target">Quads &middot; Glutes</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=leg+press+machine+proper+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Feet shoulder-width, mid-platform. Press through whole foot. Knees track over toes &mdash; don't let them cave in. Don't lock out knees at top.</div>
           <div class="fp-ex-rest">Rest 2 min</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Leg Extension</div>
-          <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
-          <div class="fp-ex-target">Quads (light weight)</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Leg Extension</div>
+              <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
+              <div class="fp-ex-target">Quads</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=leg+extension+machine+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Light weight only &mdash; this is for quad activation, not maxing out. Squeeze at the top for 1 sec. Slow negative.</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Hamstring Curl</div>
-          <div class="fp-ex-sets">3 &times; 12&ndash;15</div>
-          <div class="fp-ex-target">Hamstrings</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Hamstring Curl</div>
+              <div class="fp-ex-sets">3 &times; 12&ndash;15</div>
+              <div class="fp-ex-target">Hamstrings</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=lying+hamstring+curl+machine+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Lying or seated. Curl all the way up, squeeze hamstrings hard. 2&ndash;3 sec negative. Don't use momentum.</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Standing Calf Raise</div>
-          <div class="fp-ex-sets">3 &times; 15&ndash;20</div>
-          <div class="fp-ex-target">Calves</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Standing Calf Raise</div>
+              <div class="fp-ex-sets">3 &times; 15&ndash;20</div>
+              <div class="fp-ex-target">Calves</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=standing+calf+raise+machine+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Full stretch at bottom, pause 1 sec. Rise onto toes fully, squeeze at top. Slow and controlled &mdash; no bouncing.</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Plank</div>
-          <div class="fp-ex-sets">3 &times; 30s</div>
-          <div class="fp-ex-target">Core</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Plank</div>
+              <div class="fp-ex-sets">3 &times; 30s</div>
+              <div class="fp-ex-target">Core</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=plank+exercise+proper+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Forearms on floor, body straight line. Squeeze glutes and brace abs like someone's about to punch your gut. Don't let hips sag or pike up.</div>
         </div>
       </div>
     </details>
@@ -373,39 +472,87 @@ import Layout from '../layouts/Layout.astro';
       </summary>
       <div class="fp-card-body">
         <div class="fp-exercise">
-          <div class="fp-ex-name">Overhead Press</div>
-          <div class="fp-ex-sets">3 &times; 6&ndash;8</div>
-          <div class="fp-ex-target">Shoulders / Triceps</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Overhead Press</div>
+              <div class="fp-ex-sets">3 &times; 6&ndash;8</div>
+              <div class="fp-ex-target">Shoulders &middot; Triceps</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=overhead+press+barbell+form+tutorial" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Standing or seated. Bar starts at collar bone, press straight up. Brace core tight &mdash; don't arch lower back. Tuck chin to let bar pass face.</div>
+          <div class="fp-ex-rest">Rest 2&ndash;3 min</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">T-Bar Row</div>
-          <div class="fp-ex-sets">2 &times; 6&ndash;8</div>
-          <div class="fp-ex-target">Upper back</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">T-Bar Row</div>
+              <div class="fp-ex-sets">2 &times; 6&ndash;8</div>
+              <div class="fp-ex-target">Upper back &middot; Lats</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=t+bar+row+proper+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Hinge at hips ~45&deg;, flat back. Pull to lower chest, squeeze shoulder blades together. Don't yank &mdash; control the weight.</div>
+          <div class="fp-ex-rest">Rest 2 min</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Knee Push-Ups</div>
-          <div class="fp-ex-sets">2 sets AMRAP</div>
-          <div class="fp-ex-target">Chest / Triceps</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Knee Push-Ups</div>
+              <div class="fp-ex-sets">2 sets AMRAP</div>
+              <div class="fp-ex-target">Chest &middot; Triceps</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=knee+push+ups+proper+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Hands just outside shoulders, knees on floor. Lower chest to ground, press up. Keep core tight &mdash; body should be a straight line from knees to head.</div>
+          <div class="fp-ex-rest">Rest 90s</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Seated Row</div>
-          <div class="fp-ex-sets">2 &times; 8&ndash;12</div>
-          <div class="fp-ex-target">Mid-back</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Seated Row</div>
+              <div class="fp-ex-sets">2 &times; 8&ndash;12</div>
+              <div class="fp-ex-target">Mid-back &middot; Rhomboids</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=seated+cable+row+proper+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Sit upright, pull handle to belly button. Lead with elbows, squeeze back. Don't lean back to cheat the weight.</div>
+          <div class="fp-ex-rest">Rest 90s</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Pec Fly</div>
-          <div class="fp-ex-sets">2 &times; 8&ndash;12</div>
-          <div class="fp-ex-target">Chest</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Pec Fly</div>
+              <div class="fp-ex-sets">2 &times; 8&ndash;12</div>
+              <div class="fp-ex-target">Chest</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=pec+fly+machine+or+dumbbell+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Machine or dumbbells. Slight bend in elbows, open arms wide, squeeze chest to bring arms together. Feel the stretch at the bottom.</div>
+          <div class="fp-ex-rest">Rest 90s</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Rear Delt Fly</div>
-          <div class="fp-ex-sets">2 &times; 15&ndash;20</div>
-          <div class="fp-ex-target">Rear shoulders</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Rear Delt Fly</div>
+              <div class="fp-ex-sets">2 &times; 15&ndash;20</div>
+              <div class="fp-ex-target">Rear shoulders</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=rear+delt+fly+dumbbell+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Bent over or on machine. Arms out to sides, squeeze shoulder blades. Light weight, high reps &mdash; rear delts respond to volume.</div>
+          <div class="fp-ex-rest">Rest 60s</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Dumbbell Shrugs</div>
-          <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
-          <div class="fp-ex-target">Traps</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Dumbbell Shrugs</div>
+              <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
+              <div class="fp-ex-target">Traps</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=dumbbell+shrugs+proper+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Hold dumbbells at sides, shrug straight up toward ears. Hold top for 1 sec. Don't roll shoulders &mdash; just up and down.</div>
         </div>
       </div>
     </details>
@@ -417,49 +564,160 @@ import Layout from '../layouts/Layout.astro';
         <span>Lower Body B <small>Friday</small></span>
       </summary>
       <div class="fp-card-body">
-        <p class="fp-note">Knee-friendly session.</p>
+        <p class="fp-note">Knee-friendly session. Listen to your body.</p>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Glute Bridge</div>
-          <div class="fp-ex-sets">3 &times; 8&ndash;12</div>
-          <div class="fp-ex-target">Glutes</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Glute Bridge</div>
+              <div class="fp-ex-sets">3 &times; 8&ndash;12</div>
+              <div class="fp-ex-target">Glutes</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=barbell+glute+bridge+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Back on bench, feet flat on floor. Drive hips up by squeezing glutes &mdash; don't hyperextend lower back. Pause 1 sec at top.</div>
+          <div class="fp-ex-rest">Rest 90s</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Leg Press</div>
-          <div class="fp-ex-sets">3 &times; 10&ndash;15</div>
-          <div class="fp-ex-target">Legs</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Leg Press</div>
+              <div class="fp-ex-sets">3 &times; 10&ndash;15</div>
+              <div class="fp-ex-target">Quads &middot; Glutes</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=leg+press+machine+proper+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Same as Lower A. Feet mid-platform, shoulder-width. Controlled descent to 90&deg;, push through whole foot.</div>
+          <div class="fp-ex-rest">Rest 2 min</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Hamstring Curl</div>
-          <div class="fp-ex-sets">2 &times; 10&ndash;12</div>
-          <div class="fp-ex-target">Hamstrings</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Hamstring Curl</div>
+              <div class="fp-ex-sets">2 &times; 10&ndash;12</div>
+              <div class="fp-ex-target">Hamstrings</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=lying+hamstring+curl+machine+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Full range of motion. Curl hard, slow release. Focus on the hamstring contraction, not moving weight.</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Seated Calf Raise</div>
-          <div class="fp-ex-sets">3 &times; 15&ndash;20</div>
-          <div class="fp-ex-target">Calves</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Seated Calf Raise</div>
+              <div class="fp-ex-sets">3 &times; 15&ndash;20</div>
+              <div class="fp-ex-target">Soleus (lower calf)</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=seated+calf+raise+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Seated version targets the soleus (deep calf). Full stretch at bottom, pause, rise fully. Don't rush the reps.</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Hammer Curl</div>
-          <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
-          <div class="fp-ex-target">Biceps</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Hammer Curl</div>
+              <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
+              <div class="fp-ex-target">Biceps &middot; Brachialis</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=dumbbell+hammer+curl+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Palms face each other (neutral grip). Curl up without swinging body. Keep elbows pinned to sides.</div>
+          <div class="fp-ex-rest">Rest 60s</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Overhead Tricep Extension</div>
-          <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
-          <div class="fp-ex-target">Triceps</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Overhead Tricep Extension</div>
+              <div class="fp-ex-sets">2 &times; 12&ndash;15</div>
+              <div class="fp-ex-target">Triceps</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=overhead+tricep+extension+dumbbell+form" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">One dumbbell with both hands overhead. Lower behind head, elbows pointing up. Extend fully, squeeze triceps at top.</div>
+          <div class="fp-ex-rest">Rest 60s</div>
         </div>
         <div class="fp-exercise">
-          <div class="fp-ex-name">Side Plank</div>
-          <div class="fp-ex-sets">2 each side &times; 20&ndash;30s</div>
-          <div class="fp-ex-target">Core</div>
+          <div class="fp-ex-top">
+            <div>
+              <div class="fp-ex-name">Side Plank</div>
+              <div class="fp-ex-sets">2 each side &times; 20&ndash;30s</div>
+              <div class="fp-ex-target">Obliques &middot; Core stability</div>
+            </div>
+            <a class="fp-demo" href="https://www.youtube.com/results?search_query=side+plank+proper+form+beginner" target="_blank" rel="noopener">Demo &#8599;</a>
+          </div>
+          <div class="fp-ex-detail">Forearm on floor, feet stacked or staggered. Hips up, body straight line. Don't let hips drop. Breathe normally.</div>
         </div>
       </div>
     </details>
 
+    </div>
+  </div>
+
+  <!-- ==================== TRACK TAB ==================== -->
+  <div class="fp-panel" id="panel-track">
+    <div class="fp-grid fp-grid--single">
+
+    <!-- Log Entry -->
+    <div class="fp-card fp-card--open">
+      <div class="fp-card-head fp-card-head--static">
+        <span class="fp-icon">&#128221;</span>
+        <span>Log Today</span>
+      </div>
+      <div class="fp-card-body">
+        <div class="fp-form">
+          <div class="fp-form-row">
+            <label class="fp-label" for="log-date">Date</label>
+            <input class="fp-input" type="date" id="log-date" />
+          </div>
+          <div class="fp-form-row">
+            <label class="fp-label" for="log-weight">Weight (kg)</label>
+            <input class="fp-input" type="number" id="log-weight" step="0.1" min="50" max="200" placeholder="e.g. 129.5" />
+          </div>
+          <div class="fp-form-row">
+            <label class="fp-label" for="log-knee">Knee Pain (0&ndash;10)</label>
+            <input class="fp-input" type="number" id="log-knee" step="1" min="0" max="10" placeholder="0 = none" />
+          </div>
+          <div class="fp-form-row">
+            <label class="fp-label" for="log-waist">Waist at navel (cm) <small>optional</small></label>
+            <input class="fp-input" type="number" id="log-waist" step="0.1" placeholder="Sunday only" />
+          </div>
+          <button class="fp-btn" id="log-save">Save Entry</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- History -->
+    <div class="fp-card fp-card--open">
+      <div class="fp-card-head fp-card-head--static">
+        <span class="fp-icon">&#128200;</span>
+        <span>Progress</span>
+        <button class="fp-clear-btn" id="log-clear">Clear All</button>
+      </div>
+      <div class="fp-card-body">
+        <div class="fp-progress-summary" id="progress-summary"></div>
+        <div class="fp-table-wrap">
+          <table class="fp-table" id="log-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Weight</th>
+                <th>Knee</th>
+                <th>Waist</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="log-body"></tbody>
+          </table>
+        </div>
+        <p class="fp-empty-msg" id="log-empty">No entries yet. Start logging above!</p>
+      </div>
+    </div>
+
+    </div>
   </div>
 
   <!-- ==================== EXTRAS TAB ==================== -->
   <div class="fp-panel" id="panel-extras">
+    <div class="fp-grid">
 
     <!-- Steps -->
     <div class="fp-card fp-card--open">
@@ -494,7 +752,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="fp-card fp-card--open">
       <div class="fp-card-head fp-card-head--static">
         <span class="fp-icon">&#128200;</span>
-        <span>Progress Tracking</span>
+        <span>What to Track</span>
       </div>
       <div class="fp-card-body">
         <h4>Every Morning (after washroom)</h4>
@@ -530,21 +788,23 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
 
+    </div>
   </div>
 
 </div>
 </Layout>
 
 <style>
+  /* ===== Base ===== */
   .fp {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 1rem 6rem;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* Header */
+  /* ===== Header ===== */
   .fp-header {
     display: flex;
     align-items: center;
@@ -574,7 +834,7 @@ import Layout from '../layouts/Layout.astro';
     margin-top: 0.15rem;
   }
 
-  /* Tabs */
+  /* ===== Tabs ===== */
   .fp-tabs {
     display: flex;
     gap: 0.5rem;
@@ -610,26 +870,23 @@ import Layout from '../layouts/Layout.astro';
     color: #fff;
   }
 
-  /* Panels */
-  .fp-panel {
-    display: none;
-  }
-  .fp-panel.active {
+  /* ===== Panels & Grid ===== */
+  .fp-panel { display: none; }
+  .fp-panel.active { display: block; }
+  .fp-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
 
-  /* Cards */
+  /* ===== Cards ===== */
   .fp-card {
     background: #16161f;
     border: 1px solid #1e1e2e;
     border-radius: 14px;
     overflow: hidden;
   }
-  .fp-card--open {
-    /* always-open cards */
-  }
+  .fp-card--full { grid-column: 1 / -1; }
   .fp-card-head {
     display: flex;
     align-items: center;
@@ -650,29 +907,19 @@ import Layout from '../layouts/Layout.astro';
     color: #5c5c70;
     font-weight: 300;
     transition: transform 0.2s;
+    flex-shrink: 0;
   }
-  details[open] > .fp-card-head::after {
-    content: '\2212';
-  }
-  .fp-card-head--static {
-    cursor: default;
-  }
-  .fp-card-head--static::after {
-    display: none;
-  }
+  details[open] > .fp-card-head::after { content: '\2212'; }
+  .fp-card-head--static { cursor: default; }
+  .fp-card-head--static::after { display: none; }
   .fp-card-head small {
     font-weight: 400;
     color: #5c5c70;
     font-size: 0.78rem;
     margin-left: 0.25rem;
   }
-  .fp-icon {
-    font-size: 1.15rem;
-    line-height: 1;
-  }
-  .fp-card-body {
-    padding: 0 1rem 1rem;
-  }
+  .fp-icon { font-size: 1.15rem; line-height: 1; }
+  .fp-card-body { padding: 0 1rem 1rem; }
   .fp-card-body h4 {
     font-size: 0.75rem;
     font-weight: 600;
@@ -681,9 +928,7 @@ import Layout from '../layouts/Layout.astro';
     color: #818cf8;
     margin: 0.85rem 0 0.4rem;
   }
-  .fp-avoid-label {
-    color: #f87171 !important;
-  }
+  .fp-avoid-label { color: #f87171 !important; }
   .fp-note {
     font-size: 0.82rem;
     color: #9595a8;
@@ -694,13 +939,8 @@ import Layout from '../layouts/Layout.astro';
     line-height: 1.5;
   }
 
-  /* Chips / Tags */
-  .fp-macro-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 0.25rem;
-  }
+  /* ===== Chips ===== */
+  .fp-macro-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.25rem; }
   .fp-chip {
     padding: 0.3rem 0.7rem;
     background: #1c1c28;
@@ -710,15 +950,8 @@ import Layout from '../layouts/Layout.astro';
     color: #d0d0dd;
     white-space: nowrap;
   }
-  .fp-chip em {
-    color: #5c5c70;
-    font-style: normal;
-  }
-  .fp-chip--green {
-    background: rgba(34, 197, 94, 0.1);
-    border-color: rgba(34, 197, 94, 0.25);
-    color: #86efac;
-  }
+  .fp-chip em { color: #5c5c70; font-style: normal; }
+  .fp-chip--green { background: rgba(34, 197, 94, 0.1); border-color: rgba(34, 197, 94, 0.25); color: #86efac; }
   .fp-chip--red {
     background: rgba(239, 68, 68, 0.1);
     border-color: rgba(239, 68, 68, 0.2);
@@ -727,264 +960,330 @@ import Layout from '../layouts/Layout.astro';
     text-decoration-color: rgba(252, 165, 165, 0.4);
   }
 
-  /* Options / Steps lists */
-  .fp-options {
-    list-style: none;
-    padding: 0;
-  }
-  .fp-options li {
-    padding: 0.35rem 0;
-    font-size: 0.85rem;
-    color: #d0d0dd;
-    border-bottom: 1px solid #1e1e2e;
-  }
+  /* ===== Lists ===== */
+  .fp-options { list-style: none; padding: 0; }
+  .fp-options li { padding: 0.35rem 0; font-size: 0.85rem; color: #d0d0dd; border-bottom: 1px solid #1e1e2e; }
   .fp-options li:last-child { border: none; }
-  .fp-options li strong {
-    display: inline-block;
-    width: 1.4rem;
-    color: #818cf8;
-    font-weight: 600;
-  }
-  .fp-steps {
-    padding-left: 1.3rem;
-    margin: 0;
-  }
-  .fp-steps li {
-    font-size: 0.85rem;
-    color: #d0d0dd;
-    padding: 0.2rem 0;
-  }
-  .fp-steps li::marker {
-    color: #5c5c70;
-  }
+  .fp-options li strong { display: inline-block; width: 1.4rem; color: #818cf8; font-weight: 600; }
+  .fp-steps-list { padding-left: 1.3rem; margin: 0; }
+  .fp-steps-list li { font-size: 0.85rem; color: #d0d0dd; padding: 0.2rem 0; }
+  .fp-steps-list li::marker { color: #5c5c70; }
 
-  /* Workout exercises */
-  .fp-exercise {
-    padding: 0.6rem 0;
-    border-bottom: 1px solid #1e1e2e;
-  }
+  /* ===== Exercises ===== */
+  .fp-exercise { padding: 0.75rem 0; border-bottom: 1px solid #1e1e2e; }
   .fp-exercise:last-child { border: none; }
-  .fp-ex-name {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #f0f0f5;
-  }
-  .fp-ex-sets {
-    font-size: 0.85rem;
-    color: #818cf8;
-    font-weight: 500;
-    margin-top: 0.1rem;
-  }
-  .fp-ex-target {
-    font-size: 0.78rem;
-    color: #5c5c70;
-    margin-top: 0.1rem;
-  }
-  .fp-ex-rest {
-    font-size: 0.75rem;
+  .fp-ex-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; }
+  .fp-ex-name { font-size: 0.95rem; font-weight: 600; color: #f0f0f5; }
+  .fp-ex-sets { font-size: 0.85rem; color: #818cf8; font-weight: 500; margin-top: 0.15rem; }
+  .fp-ex-target { font-size: 0.78rem; color: #5c5c70; margin-top: 0.1rem; }
+  .fp-ex-detail {
+    font-size: 0.8rem;
     color: #9595a8;
-    margin-top: 0.1rem;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+    padding-left: 0;
   }
-
-  /* Schedule grid */
-  .fp-schedule {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 0.35rem;
-  }
-  .fp-day {
-    text-align: center;
-    padding: 0.5rem 0.2rem;
-    border-radius: 10px;
-    background: rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.15);
-  }
-  .fp-day--rest {
-    background: rgba(100, 100, 120, 0.08);
-    border-color: #1e1e2e;
-  }
-  .fp-day-name {
-    display: block;
-    font-size: 0.65rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .fp-ex-rest { font-size: 0.75rem; color: #5c5c70; margin-top: 0.3rem; }
+  .fp-demo {
+    flex-shrink: 0;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.72rem;
+    font-weight: 600;
     color: #818cf8;
-    margin-bottom: 0.2rem;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s;
   }
-  .fp-day--rest .fp-day-name {
-    color: #5c5c70;
-  }
-  .fp-day-workout {
-    display: block;
-    font-size: 0.6rem;
-    color: #d0d0dd;
-    line-height: 1.25;
-  }
-  .fp-day--rest .fp-day-workout {
-    color: #5c5c70;
-  }
+  .fp-demo:hover { background: rgba(99, 102, 241, 0.2); color: #a5b4fc; }
 
-  /* Steps grid */
-  .fp-steps-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-  }
-  .fp-step-week {
-    padding: 0.65rem 0.8rem;
+  /* ===== Schedule ===== */
+  .fp-schedule { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.35rem; }
+  .fp-day { text-align: center; padding: 0.5rem 0.2rem; border-radius: 10px; background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.15); }
+  .fp-day--rest { background: rgba(100, 100, 120, 0.08); border-color: #1e1e2e; }
+  .fp-day-name { display: block; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #818cf8; margin-bottom: 0.2rem; }
+  .fp-day--rest .fp-day-name { color: #5c5c70; }
+  .fp-day-workout { display: block; font-size: 0.6rem; color: #d0d0dd; line-height: 1.25; }
+  .fp-day--rest .fp-day-workout { color: #5c5c70; }
+
+  /* ===== Steps Grid ===== */
+  .fp-steps-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+  .fp-step-week { padding: 0.65rem 0.8rem; background: #1c1c28; border: 1px solid #2a2a3d; border-radius: 10px; text-align: center; }
+  .fp-step-week--target { background: rgba(99, 102, 241, 0.12); border-color: rgba(99, 102, 241, 0.3); }
+  .fp-step-label { display: block; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; color: #5c5c70; margin-bottom: 0.15rem; }
+  .fp-step-val { font-size: 1.05rem; font-weight: 700; color: #f0f0f5; }
+  .fp-step-week--target .fp-step-val { color: #818cf8; }
+
+  /* ===== Checklist ===== */
+  .fp-checklist { list-style: none; padding: 0; }
+  .fp-checklist li { padding: 0.4rem 0 0.4rem 1.6rem; font-size: 0.85rem; color: #d0d0dd; position: relative; border-bottom: 1px solid #1e1e2e; }
+  .fp-checklist li:last-child { border: none; }
+  .fp-checklist li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 1rem; height: 1rem; border: 2px solid #2a2a3d; border-radius: 4px; }
+  .fp-checklist--success li::before { border-color: rgba(34, 197, 94, 0.4); background: rgba(34, 197, 94, 0.08); }
+  .fp-target-note { margin-top: 1rem; padding: 0.7rem 0.9rem; background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 10px; font-size: 0.9rem; color: #d0d0dd; text-align: center; }
+  .fp-target-note strong { color: #818cf8; }
+
+  /* ===== Tracker Form ===== */
+  .fp-form { display: flex; flex-direction: column; gap: 0.75rem; }
+  .fp-form-row { display: flex; flex-direction: column; gap: 0.25rem; }
+  .fp-label { font-size: 0.8rem; font-weight: 500; color: #9595a8; }
+  .fp-label small { color: #5c5c70; font-weight: 400; }
+  .fp-input {
+    padding: 0.6rem 0.75rem;
     background: #1c1c28;
     border: 1px solid #2a2a3d;
     border-radius: 10px;
-    text-align: center;
-  }
-  .fp-step-week--target {
-    background: rgba(99, 102, 241, 0.12);
-    border-color: rgba(99, 102, 241, 0.3);
-  }
-  .fp-step-label {
-    display: block;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: #5c5c70;
-    margin-bottom: 0.15rem;
-  }
-  .fp-step-val {
-    font-size: 1.05rem;
-    font-weight: 700;
     color: #f0f0f5;
-  }
-  .fp-step-week--target .fp-step-val {
-    color: #818cf8;
-  }
-
-  /* Checklist */
-  .fp-checklist {
-    list-style: none;
-    padding: 0;
-  }
-  .fp-checklist li {
-    padding: 0.4rem 0 0.4rem 1.6rem;
-    font-size: 0.85rem;
-    color: #d0d0dd;
-    position: relative;
-    border-bottom: 1px solid #1e1e2e;
-  }
-  .fp-checklist li:last-child { border: none; }
-  .fp-checklist li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1rem;
-    height: 1rem;
-    border: 2px solid #2a2a3d;
-    border-radius: 4px;
-  }
-  .fp-checklist--success li::before {
-    border-color: rgba(34, 197, 94, 0.4);
-    background: rgba(34, 197, 94, 0.08);
-  }
-
-  .fp-target-note {
-    margin-top: 1rem;
-    padding: 0.7rem 0.9rem;
-    background: rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.2);
-    border-radius: 10px;
     font-size: 0.9rem;
-    color: #d0d0dd;
-    text-align: center;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
   }
-  .fp-target-note strong {
-    color: #818cf8;
+  .fp-input:focus { border-color: #6366f1; }
+  .fp-input::placeholder { color: #5c5c70; }
+  .fp-btn {
+    padding: 0.7rem 1rem;
+    background: #6366f1;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.25rem;
   }
+  .fp-btn:hover { background: #4f46e5; }
+  .fp-btn:active { transform: scale(0.98); }
 
-  /* Desktop: two-column card grid, bigger type */
+  /* ===== Tracker Table ===== */
+  .fp-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .fp-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  .fp-table th { text-align: left; color: #5c5c70; font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.5rem 0.5rem; border-bottom: 1px solid #2a2a3d; }
+  .fp-table td { padding: 0.5rem 0.5rem; color: #d0d0dd; border-bottom: 1px solid #1e1e2e; }
+  .fp-table .fp-del-btn { background: none; border: none; color: #5c5c70; cursor: pointer; font-size: 0.9rem; padding: 0.2rem; line-height: 1; }
+  .fp-table .fp-del-btn:hover { color: #f87171; }
+  .fp-empty-msg { font-size: 0.85rem; color: #5c5c70; text-align: center; padding: 1.5rem 0; }
+  .fp-progress-summary {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .fp-progress-summary.has-data { display: grid; }
+  .fp-stat-card {
+    text-align: center;
+    padding: 0.6rem 0.4rem;
+    background: #1c1c28;
+    border: 1px solid #2a2a3d;
+    border-radius: 10px;
+  }
+  .fp-stat-label { display: block; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: #5c5c70; margin-bottom: 0.15rem; }
+  .fp-stat-value { display: block; font-size: 1.1rem; font-weight: 700; color: #f0f0f5; }
+  .fp-stat-value--green { color: #86efac; }
+  .fp-stat-value--red { color: #fca5a5; }
+  .fp-clear-btn {
+    margin-left: auto;
+    padding: 0.2rem 0.6rem;
+    background: none;
+    border: 1px solid #2a2a3d;
+    border-radius: 6px;
+    color: #5c5c70;
+    font-size: 0.7rem;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .fp-clear-btn:hover { color: #f87171; border-color: rgba(248, 113, 113, 0.3); }
+
+  /* ===== Desktop ===== */
   @media (min-width: 768px) {
-    .fp {
-      padding: 0 2rem 4rem;
-    }
-    .fp-header {
-      padding: 2rem 0 1.25rem;
-    }
-    .fp-title {
-      font-size: 1.8rem;
-    }
-    .fp-stats {
-      font-size: 0.9rem;
-    }
-    .fp-tabs {
-      top: 72px;
-      padding: 1rem 0;
-    }
-    .fp-tab {
-      padding: 0.6rem 1.5rem;
-      font-size: 0.95rem;
-    }
-    .fp-panel.active {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-    .fp-card-head {
-      padding: 1rem 1.25rem;
-      font-size: 1.1rem;
-    }
-    .fp-card-body {
-      padding: 0 1.25rem 1.25rem;
-    }
-    .fp-card-body h4 {
-      font-size: 0.8rem;
-    }
-    .fp-chip {
-      font-size: 0.85rem;
-      padding: 0.35rem 0.8rem;
-    }
-    .fp-options li {
-      font-size: 0.9rem;
-    }
-    .fp-ex-name {
-      font-size: 1rem;
-    }
-    .fp-ex-sets {
-      font-size: 0.9rem;
-    }
-    .fp-ex-target {
-      font-size: 0.82rem;
-    }
-    .fp-note {
-      font-size: 0.88rem;
-    }
-    .fp-steps-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-    .fp-step-val {
-      font-size: 1.15rem;
-    }
-    .fp-checklist li {
-      font-size: 0.9rem;
-    }
+    .fp { padding: 0 2.5rem 4rem; }
+    .fp-header { padding: 2rem 0 1.25rem; }
+    .fp-title { font-size: 1.8rem; }
+    .fp-stats { font-size: 0.9rem; }
+    .fp-tabs { top: 76px; padding: 1rem 0; }
+    .fp-tab { padding: 0.6rem 1.5rem; font-size: 0.95rem; }
+    .fp-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .fp-grid--single { grid-template-columns: repeat(2, 1fr); }
+    .fp-card--full { grid-column: 1 / -1; }
+    .fp-card-head { padding: 1rem 1.25rem; font-size: 1.05rem; }
+    .fp-card-body { padding: 0 1.25rem 1.25rem; }
+    .fp-card-body h4 { font-size: 0.8rem; }
+    .fp-chip { font-size: 0.85rem; padding: 0.35rem 0.8rem; }
+    .fp-options li { font-size: 0.9rem; }
+    .fp-ex-name { font-size: 1rem; }
+    .fp-ex-sets { font-size: 0.9rem; }
+    .fp-ex-detail { font-size: 0.85rem; }
+    .fp-note { font-size: 0.88rem; }
+    .fp-steps-grid { grid-template-columns: repeat(4, 1fr); }
+    .fp-step-val { font-size: 1.15rem; }
+    .fp-checklist li { font-size: 0.9rem; }
+    .fp-form-row { flex-direction: row; align-items: center; gap: 0.75rem; }
+    .fp-label { min-width: 160px; }
+    .fp-input { flex: 1; }
+    .fp-progress-summary { grid-template-columns: repeat(3, 1fr); }
   }
 
   @media (max-width: 400px) {
-    .fp-schedule {
-      grid-template-columns: repeat(4, 1fr);
-    }
+    .fp-schedule { grid-template-columns: repeat(4, 1fr); }
   }
 </style>
 
 <script>
+  // Tab switching
   document.getElementById('tabs')!.addEventListener('click', (e) => {
     const btn = (e.target as HTMLElement).closest('.fp-tab');
     if (!btn) return;
     const tab = btn.getAttribute('data-tab')!;
-
     document.querySelectorAll('.fp-tab').forEach(t => t.classList.remove('active'));
     btn.classList.add('active');
-
     document.querySelectorAll('.fp-panel').forEach(p => p.classList.remove('active'));
     document.getElementById(`panel-${tab}`)!.classList.add('active');
+    if (tab === 'track') renderLog();
   });
+
+  // Weight tracker with localStorage
+  const STORAGE_KEY = 'fp-weight-log';
+
+  interface LogEntry {
+    date: string;
+    weight: number;
+    knee: number;
+    waist?: number;
+  }
+
+  function getLog(): LogEntry[] {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
+    catch { return []; }
+  }
+
+  function saveLog(log: LogEntry[]) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(log));
+  }
+
+  function renderLog() {
+    const log = getLog().sort((a, b) => b.date.localeCompare(a.date));
+    const body = document.getElementById('log-body')!;
+    const empty = document.getElementById('log-empty')!;
+    const summary = document.getElementById('progress-summary')!;
+
+    body.innerHTML = '';
+
+    if (log.length === 0) {
+      empty.style.display = 'block';
+      summary.classList.remove('has-data');
+      return;
+    }
+
+    empty.style.display = 'none';
+
+    // Summary stats
+    const latest = log[0];
+    const oldest = log[log.length - 1];
+    const weekEntries = log.filter(e => {
+      const d = new Date(e.date);
+      const now = new Date();
+      return (now.getTime() - d.getTime()) < 7 * 86400000;
+    });
+    const weekAvg = weekEntries.length > 0
+      ? (weekEntries.reduce((s, e) => s + e.weight, 0) / weekEntries.length).toFixed(1)
+      : latest.weight.toFixed(1);
+    const totalChange = log.length > 1 ? (latest.weight - oldest.weight).toFixed(1) : '0.0';
+    const changeNum = parseFloat(totalChange);
+    const changeClass = changeNum < 0 ? 'fp-stat-value--green' : changeNum > 0 ? 'fp-stat-value--red' : '';
+    const changePrefix = changeNum > 0 ? '+' : '';
+
+    summary.classList.add('has-data');
+    summary.innerHTML = `
+      <div class="fp-stat-card">
+        <span class="fp-stat-label">Latest</span>
+        <span class="fp-stat-value">${latest.weight} kg</span>
+      </div>
+      <div class="fp-stat-card">
+        <span class="fp-stat-label">7-Day Avg</span>
+        <span class="fp-stat-value">${weekAvg} kg</span>
+      </div>
+      <div class="fp-stat-card">
+        <span class="fp-stat-label">Total Change</span>
+        <span class="fp-stat-value ${changeClass}">${changePrefix}${totalChange} kg</span>
+      </div>
+    `;
+
+    // Table rows
+    log.forEach((entry, i) => {
+      const tr = document.createElement('tr');
+      const d = new Date(entry.date + 'T00:00:00');
+      const dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      const kneeColor = entry.knee <= 2 ? '#86efac' : entry.knee <= 5 ? '#fbbf24' : '#fca5a5';
+      tr.innerHTML = `
+        <td>${dateStr}</td>
+        <td><strong>${entry.weight}</strong></td>
+        <td style="color:${kneeColor}">${entry.knee}/10</td>
+        <td>${entry.waist ? entry.waist + ' cm' : '—'}</td>
+        <td><button class="fp-del-btn" data-idx="${i}">&times;</button></td>
+      `;
+      body.appendChild(tr);
+    });
+  }
+
+  // Save entry
+  document.getElementById('log-save')!.addEventListener('click', () => {
+    const dateEl = document.getElementById('log-date') as HTMLInputElement;
+    const weightEl = document.getElementById('log-weight') as HTMLInputElement;
+    const kneeEl = document.getElementById('log-knee') as HTMLInputElement;
+    const waistEl = document.getElementById('log-waist') as HTMLInputElement;
+
+    const weight = parseFloat(weightEl.value);
+    const knee = parseInt(kneeEl.value);
+    if (!dateEl.value || isNaN(weight) || isNaN(knee)) return;
+
+    const log = getLog();
+    const existing = log.findIndex(e => e.date === dateEl.value);
+    const entry: LogEntry = {
+      date: dateEl.value,
+      weight,
+      knee,
+      waist: waistEl.value ? parseFloat(waistEl.value) : undefined,
+    };
+    if (existing >= 0) log[existing] = entry;
+    else log.push(entry);
+    saveLog(log);
+
+    weightEl.value = '';
+    kneeEl.value = '';
+    waistEl.value = '';
+    renderLog();
+  });
+
+  // Delete entry
+  document.getElementById('log-body')!.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('.fp-del-btn');
+    if (!btn) return;
+    const idx = parseInt(btn.getAttribute('data-idx')!);
+    const log = getLog().sort((a, b) => b.date.localeCompare(a.date));
+    log.splice(idx, 1);
+    saveLog(log);
+    renderLog();
+  });
+
+  // Clear all
+  document.getElementById('log-clear')!.addEventListener('click', () => {
+    if (confirm('Delete all tracking data? This cannot be undone.')) {
+      localStorage.removeItem(STORAGE_KEY);
+      renderLog();
+    }
+  });
+
+  // Set today's date as default
+  const dateInput = document.getElementById('log-date') as HTMLInputElement;
+  const today = new Date();
+  dateInput.value = today.getFullYear() + '-' +
+    String(today.getMonth() + 1).padStart(2, '0') + '-' +
+    String(today.getDate()).padStart(2, '0');
+
+  // Initial render if track tab is visible
+  renderLog();
 </script>
