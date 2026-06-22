@@ -797,11 +797,11 @@ import Layout from '../layouts/Layout.astro';
 <style>
   /* ===== Base ===== */
   .fp {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1rem 6rem;
+    width: 100%;
+    min-height: 100vh;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-tap-highlight-color: transparent;
+    background: #0a0a0f;
   }
 
   /* ===== Header ===== */
@@ -809,11 +809,12 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1.5rem 0 1rem;
+    padding: 1.5rem 1.25rem 1rem;
     position: sticky;
     top: 0;
     z-index: 100;
-    background: #0a0a0f;
+    background: linear-gradient(180deg, #101018 0%, #0a0a0f 100%);
+    border-bottom: 1px solid #1e1e2e;
   }
   .fp-back {
     font-size: 1.5rem;
@@ -838,13 +839,12 @@ import Layout from '../layouts/Layout.astro';
   .fp-tabs {
     display: flex;
     gap: 0.5rem;
-    padding: 0.75rem 0;
+    padding: 0.75rem 1.25rem;
     position: sticky;
-    top: 58px;
+    top: 62px;
     z-index: 99;
     background: #0a0a0f;
     border-bottom: 1px solid #1e1e2e;
-    margin-bottom: 1rem;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -872,7 +872,7 @@ import Layout from '../layouts/Layout.astro';
 
   /* ===== Panels & Grid ===== */
   .fp-panel { display: none; }
-  .fp-panel.active { display: block; }
+  .fp-panel.active { display: block; padding: 1rem 1.25rem 4rem; }
   .fp-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -1100,12 +1100,12 @@ import Layout from '../layouts/Layout.astro';
 
   /* ===== Desktop ===== */
   @media (min-width: 768px) {
-    .fp { padding: 0 2.5rem 4rem; }
-    .fp-header { padding: 2rem 0 1.25rem; }
+    .fp-header { padding: 1.5rem 3rem 1.25rem; }
     .fp-title { font-size: 1.8rem; }
     .fp-stats { font-size: 0.9rem; }
-    .fp-tabs { top: 76px; padding: 1rem 0; }
+    .fp-tabs { top: 68px; padding: 1rem 3rem; }
     .fp-tab { padding: 0.6rem 1.5rem; font-size: 0.95rem; }
+    .fp-panel.active { padding: 1.5rem 3rem 4rem; }
     .fp-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .fp-grid--single { grid-template-columns: repeat(2, 1fr); }
     .fp-card--full { grid-column: 1 / -1; }
@@ -1125,6 +1125,12 @@ import Layout from '../layouts/Layout.astro';
     .fp-label { min-width: 160px; }
     .fp-input { flex: 1; }
     .fp-progress-summary { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (min-width: 1200px) {
+    .fp-header { padding: 1.5rem 4rem 1.25rem; }
+    .fp-tabs { padding: 1rem 4rem; }
+    .fp-panel.active { padding: 1.5rem 4rem 4rem; }
+    .fp-grid { grid-template-columns: repeat(3, 1fr); }
   }
 
   @media (max-width: 400px) {
