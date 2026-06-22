@@ -2,21 +2,18 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Nikhil — Fat Loss Plan" description="Complete fat loss meal and workout plan">
+<Layout title="Nikhil — Built Different" description="Complete meal, workout, and progress tracking plan">
 <div class="fp">
   <header class="fp-header">
     <a href="/" class="fp-back" aria-label="Back to portfolio">&larr;</a>
-    <div>
-      <h1 class="fp-title">Fat Loss Plan</h1>
-      <p class="fp-stats">6'3" &middot; 130kg &rarr; 120kg &middot; 4 days/week</p>
-    </div>
+    <h1 class="fp-title">Built Different</h1>
   </header>
 
   <nav class="fp-tabs" id="tabs">
     <button class="fp-tab active" data-tab="meals">Meals</button>
     <button class="fp-tab" data-tab="workouts">Workouts</button>
     <button class="fp-tab" data-tab="track">Track</button>
-    <button class="fp-tab" data-tab="extras">Steps & More</button>
+    <button class="fp-tab" data-tab="extras">Progress</button>
   </nav>
 
   <!-- ==================== MEALS TAB ==================== -->
@@ -827,12 +824,11 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1.4rem;
     font-weight: 700;
     color: #f0f0f5;
-    line-height: 1.2;
-  }
-  .fp-stats {
-    font-size: 0.8rem;
-    color: #9595a8;
-    margin-top: 0.15rem;
+    line-height: 1;
+    background: linear-gradient(135deg, #818cf8, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   /* ===== Tabs ===== */
@@ -851,18 +847,19 @@ import Layout from '../layouts/Layout.astro';
   }
   .fp-tabs::-webkit-scrollbar { display: none; }
   .fp-tab {
-    flex-shrink: 0;
-    padding: 0.5rem 1.1rem;
+    flex: 1;
+    padding: 0.5rem 0.5rem;
     border: 1px solid #2a2a3d;
     border-radius: 100px;
     background: transparent;
     color: #9595a8;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 500;
     font-family: inherit;
     cursor: pointer;
     transition: all 0.2s;
     white-space: nowrap;
+    text-align: center;
   }
   .fp-tab.active {
     background: #6366f1;
@@ -1102,9 +1099,8 @@ import Layout from '../layouts/Layout.astro';
   @media (min-width: 768px) {
     .fp-header { padding: 1.5rem 3rem 1.25rem; }
     .fp-title { font-size: 1.8rem; }
-    .fp-stats { font-size: 0.9rem; }
     .fp-tabs { top: 68px; padding: 1rem 3rem; }
-    .fp-tab { padding: 0.6rem 1.5rem; font-size: 0.95rem; }
+    .fp-tab { flex: 0; padding: 0.6rem 1.5rem; font-size: 0.95rem; }
     .fp-panel.active { padding: 1.5rem 3rem 4rem; }
     .fp-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .fp-grid--single { grid-template-columns: repeat(2, 1fr); }
